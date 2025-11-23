@@ -11,12 +11,16 @@ function Navbar({ onGetStarted, onTryDemo }) {
           className="h-10 w-10 rounded-full object-cover"
         />
         <div>
-          <p className="text-lg font-semibold text-white">sd-ai studio</p>
-          <p className="text-xs text-slate-400">System dynamics, accelerated</p>
+          <p className="text-lg font-semibold text-white">
+            Tackle Simulation Studio
+          </p>
         </div>
       </div>
       <div className="flex items-center gap-3">
-        <button className="text-sm text-slate-300 hover:text-white" onClick={onTryDemo}>
+        <button
+          className="text-sm text-slate-300 hover:text-white"
+          onClick={onTryDemo}
+        >
           Login
         </button>
         <Button variant="ghost" className="text-sm" onClick={onGetStarted}>

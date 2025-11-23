@@ -9,7 +9,10 @@ function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Left side - Copyright */}
           <div className="text-center text-sm text-slate-400 md:text-left">
-            <p>© {currentYear} SD-AI Studio. All rights reserved.</p>
+            <p>
+              Copyright © {currentYear} Tackle Simulation Studio. All rights
+              reserved.
+            </p>
             <p className="mt-1">
               Powered by{" "}
               <a
