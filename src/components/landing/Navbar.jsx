@@ -3,11 +3,13 @@ import Button from "../Button";
 
 function Navbar({ onGetStarted, onTryDemo }) {
   return (
-    <header className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/70 px-6 py-4 shadow-lg shadow-slate-900/40">
+    <header className="flex items-center justify-between px-6 py-4">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-teal-400 font-black text-slate-900">
-          SD
-        </div>
+        <img
+          src="assets/logo.png"
+          alt="SD-AI Studio Logo"
+          className="h-10 w-10 rounded-full object-cover"
+        />
         <div>
           <p className="text-lg font-semibold text-white">sd-ai studio</p>
           <p className="text-xs text-slate-400">System dynamics, accelerated</p>
