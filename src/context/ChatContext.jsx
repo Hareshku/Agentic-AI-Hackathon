@@ -4,8 +4,22 @@ import { sendChatPrompt } from "../api/chatAPI";
 const ChatContext = createContext(null);
 
 const seedMessages = [
-  { role: "system", message: "Ask me to propose variables and links for your model." },
-  { role: "assistant", message: "Try describing your system and I will suggest nodes." },
+  {
+    role: "assistant",
+    message: `👋 Hi! I'm here to help you explore a problem using systems thinking.
+
+You can start by describing the problem you want to understand. For example:
+• "Why is student stress increasing?"
+• "Why is traffic getting worse?"
+• "Why is my team's productivity dropping?"
+
+Once you tell me your problem, I'll help you:
+✓ clarify it,
+✓ build a model,
+✓ learn insights from it.
+
+What problem would you like to explore?`,
+  },
 ];
 
 export function ChatProvider({ children }) {

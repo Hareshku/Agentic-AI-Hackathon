@@ -47,7 +47,7 @@ function ChatPanel() {
   };
 
   return (
-    <div className="flex min-h-[260px] flex-1 flex-col rounded-xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-slate-950/30">
+    <div className="flex max-h-[400px] flex-col rounded-xl border border-slate-800 bg-slate-900/70 p-4 shadow-lg shadow-slate-950/30">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-200">Chat Panel</h3>
         {latestAssistant?.message && (
@@ -56,20 +56,19 @@ function ChatPanel() {
           </Button>
         )}
       </div>
-      <div className="mt-3 flex-1 space-y-3 overflow-y-auto rounded-lg border border-slate-800 bg-slate-950/40 p-3">
+      <div className="mt-3 max-h-[240px] flex-1 space-y-3 overflow-y-auto rounded-lg border border-slate-800 bg-slate-950/40 p-3">
         {messages.map((msg, idx) => (
           <div
             key={`${msg.role}-${idx}`}
-            className={`max-w-[90%] rounded-xl px-3 py-2 text-sm ${
-              msg.role === "user"
-                ? "ml-auto bg-sky-500/20 text-sky-100"
-                : "mr-auto bg-slate-800/80 text-slate-100"
-            }`}
+            className={`max-w-[90%] rounded-xl px-3 py-2 text-sm ${msg.role === "user"
+              ? "ml-auto bg-sky-500/20 text-sky-100"
+              : "mr-auto bg-slate-800/80 text-slate-100"
+              }`}
           >
             <p className="text-[11px] uppercase tracking-wide text-slate-400">
               {msg.role === "user" ? "You" : "AI"}
             </p>
-            <p>{msg.message}</p>
+            <p className="whitespace-pre-wrap">{msg.message}</p>
           </div>
         ))}
         {isLoading && <Loader label="Waiting for AI..." />}
@@ -78,7 +77,7 @@ function ChatPanel() {
       <form onSubmit={handleSend} className="mt-3 flex items-center gap-2">
         <input
           className="w-full rounded-lg border border-slate-800 bg-slate-950/70 px-3 py-2 text-sm text-white outline-none ring-1 ring-transparent focus:ring-sky-400"
-          placeholder='Describe your system, e.g. "Population drives Birth rate"'
+          placeholder='Type your message here...'
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
